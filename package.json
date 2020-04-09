@@ -1,0 +1,19 @@
+{
+  "name": "vision_chat_api",
+  "version": "1.0.0",
+  "description": "one step solution for adding chat functionalities in applications.",
+  "main": "index.js",
+  "scripts": {
+    "start" : "node index.js"
+  },
+  "keywords": [
+    "chat_API",
+    "conferrence",
+    "private_chats_API",
+    "android",
+    "web",
+    "ios"
+  ],
+  "author": "Abhishek Amrute.",
+  "license": "ISC"
+}
