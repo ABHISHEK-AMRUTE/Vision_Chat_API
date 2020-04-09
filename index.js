@@ -10,11 +10,11 @@ app.use(main_routes)
 
 
 
-database.ref('/users').set({
-    username: "name",
-    email: "email",
-    profile_picture : "imageUrl"
-  });
+// database.ref('/users').set({
+//     username: "name",
+//     email: "email",
+//     profile_picture : "imageUrl"
+//   });
 
 app.listen(port,()=>{
     console.log('Server is up on port: '+port)
