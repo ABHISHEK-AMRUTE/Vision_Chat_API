@@ -1,6 +1,6 @@
 console.log(Date.now())
-import * as database from "../../src/firebase/firebase";
-const add = ()=>{
+
+const add = function (){
     alert('write')
-    database.ref('/user/'+Date.now()).set({"namam":"hi there"})
+    //database.ref('/user/'+Date.now()).set({"namam":"hi there"})
 }
