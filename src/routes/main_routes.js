@@ -27,8 +27,14 @@ app.get('/chat/',(req,res)=>
     res.send("form app congrats!")
 })
 
-///creating room and password
-app.get('/createRoom/')
+///creating room 
+app.get('/createRoom/:userId',(req,res)=>{
+    const userId  = req.params.userId;
+    console.log(userId)
+    database.ref('/'+userId+"/"+Date.now()).set({username:"admin",message:"room created"})
+    const url = process.env.URL + '/templets/views/user_reg.html?roomID='+userId
+    res.send({url})
+})
 
 
 
