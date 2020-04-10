@@ -5,7 +5,10 @@ const database = require('../firebase/firebase')
 //////////landing page of the chat interface/////
 app.get('',(req,res)=>{
     res.render('chat',{
-        tit : "title of the page"
+        tit : {
+            name : "title of the page",
+            body : "I am th ebody of the page"
+        }
     })
 })
 
