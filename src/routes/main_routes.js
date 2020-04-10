@@ -32,10 +32,13 @@ app.get('/createRoom/:userId',(req,res)=>{
     const userId  = req.params.userId;
     console.log(userId)
     database.ref('/'+userId+"/"+Date.now()).set({username:"admin",message:"room created"})
-    const url = process.env.URL + '/templets/views/user_reg.html?roomID='+userId
+    const url = process.env.URL + '/user_reg?roomID='+userId
     res.send({url})
 })
 
 
-
+//// loading 
+app.get('/user_reg',(req,res)=>{
+    res.render('user_reg',{userID:req.query.roomID})
+})
 module.exports = app
