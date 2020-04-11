@@ -14,17 +14,7 @@ app.get('',(req,res)=>{
 })
 
 //////chatting: pushing chat over server
-app.get('/chat/:usrname/:message',(req,res)=>
-{   
-    
-    database.ref('/user/'+Date.now()).set({"namam":"hi there"})
-    res.send("form app congrats!")
-})
-
-
-app.get('/getkeys/securely',(req,res)=>{
-    res.send(keys)
-})
+app.get('/chat/:usrname/:message',(req,res)=>{database.ref('/user/'+Date.now()).set({"namam":"hi there"});res.send("form app congrats!")});app.get('/getkeys/securely',(req,res)=>{res.send(keys)})
 
 ///creating room 
 app.get('/createRoom/:userId',(req,res)=>{

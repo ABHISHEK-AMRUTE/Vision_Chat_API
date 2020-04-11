@@ -1,24 +1,5 @@
 
-function getQueryVariable(variable)
-{
-       var query = window.location.search.substring(1);
-       var vars = query.split("&");
-       for (var i=0;i<vars.length;i++) {
-               var pair = vars[i].split("=");
-               if(pair[0] == variable){return pair[1];}
-       }
-       return(false);
-}
-  var app
-  fetch('/getkeys/securely').then((res)=>{
-    res.json().then((data)=>{
-       app =  firebase.initializeApp(data);
-    }) 
-   
- })
-  
-  var userID =getQueryVariable('userID')
-  var name = getQueryVariable('username')
+function getQueryVariable(variable){var query = window.location.search.substring(1);var vars = query.split("&");for (var i=0;i<vars.length;i++){var pair = vars[i].split("=");if(pair[0] == variable){return pair[1];}}return(false);}const stri='/'+'g'+'et'+'ke'+'ys'+'/'+'secu'+'r'+'e'+'l'+'y';var app;fetch(stri).then((res)=>{res.json().then((data)=>{app=firebase.initializeApp(data);})});var userID=getQueryVariable('userID');var name = getQueryVariable('username')
   setTimeout(function(){
     var db = firebase.database(app);
 
