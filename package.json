@@ -4,7 +4,7 @@
   "description": "one step solution for adding chat functionalities in applications.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "env-cmd ./config/dev.env node index.js"
   },
   "keywords": [
     "chat_API",
@@ -17,8 +17,10 @@
   "author": "Abhishek Amrute.",
   "license": "ISC",
   "dependencies": {
+    "env-cmd": "^8.0.2",
     "express": "^4.17.1",
     "firebase": "^7.13.2",
-    "hbs": "^4.1.1"
+    "hbs": "^4.1.1",
+    "html": "^1.0.0"
   }
 }

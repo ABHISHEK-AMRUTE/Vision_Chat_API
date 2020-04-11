@@ -1,10 +1,10 @@
 const express = require('express')
 const app = new express.Router()
 const database = require('../firebase/firebase')
-
+const path = require('path')
 //////////landing page of the chat interface/////
 app.get('',(req,res)=>{
-    res.render('chat',{
+    res.render('room_creation',{
         tit : {
             name : "title of the page",
             body : "I am th ebody of the page"
@@ -21,11 +21,7 @@ app.get('/chat/:usrname/:message',(req,res)=>
 })
 
 
-///get all chats: 
-app.get('/chat/',(req,res)=>
-{
-    res.send("form app congrats!")
-})
+
 
 ///creating room 
 app.get('/createRoom/:userId',(req,res)=>{
@@ -39,6 +35,14 @@ app.get('/createRoom/:userId',(req,res)=>{
 
 //// loading 
 app.get('/user_reg',(req,res)=>{
+    
     res.render('user_reg',{userID:req.query.roomID})
+})
+
+
+
+app.get('/chat.hbs',(req,res)=>{
+    
+    res.render('chat',{userID:req.query.userID,username:req.query.username})
 })
 module.exports = app

@@ -1,8 +1,9 @@
 
-var mes1 =document.querySelector('#mes1')
+document.getElementById('submit').addEventListener('click',function(){
+ fetch('/createRoom/'+document.getElementById('input').value).then((res)=>{
+    document.getElementById('message').innerHTML = res.url
+    console.log(res.url)
+ })
+})
 
 
-const add_me = function(){
-    var st = document.getElementById("input").value; 
-    
-}
