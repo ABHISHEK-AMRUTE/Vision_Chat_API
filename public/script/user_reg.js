@@ -1,12 +1,19 @@
-const userID = document.getElementById('getuser').value
 
+function getQueryVariable(variable)
+{
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+}
+const userID= getQueryVariable('roomID')
+console.log('user room name '+userID)
 document.getElementById('submit').addEventListener('click',function(){
-    window.location.replace('../html/chat.html');
+    window.location.replace('../html/chat.html?userID='+ userID
+    +'&username='+document.getElementById('input').value);
     
 
 })
-
-// const proceed = function(){
-//     console.log('asd')
-//     window.location.replace('./chat.hbs?userID='+userID+'&username='+document.getElementById('input').value);
-// }

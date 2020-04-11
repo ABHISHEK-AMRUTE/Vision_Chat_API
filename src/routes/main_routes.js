@@ -29,13 +29,14 @@ app.get('/createRoom/:userId',(req,res)=>{
     console.log(userId)
     database.ref('/'+userId+"/"+Date.now()).set({username:"admin",message:"room created"})
     const url = process.env.URL + '/user_reg?roomID='+userId
+    console.log(url)
     res.send({url})
 })
 
 
 //// loading 
 app.get('/user_reg',(req,res)=>{
-    
+    console.log(req.query.roomID)
     res.render('user_reg',{userID:req.query.roomID})
 })
 
