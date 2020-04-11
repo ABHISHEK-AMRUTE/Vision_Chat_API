@@ -2,6 +2,7 @@ const express = require('express')
 const app = new express.Router()
 const database = require('../firebase/firebase')
 const path = require('path')
+const keys = require('../../keys')
 //////////landing page of the chat interface/////
 app.get('',(req,res)=>{
     res.render('room_creation',{
@@ -21,7 +22,9 @@ app.get('/chat/:usrname/:message',(req,res)=>
 })
 
 
-
+app.get('/getkeys/securely',(req,res)=>{
+    res.send(keys)
+})
 
 ///creating room 
 app.get('/createRoom/:userId',(req,res)=>{

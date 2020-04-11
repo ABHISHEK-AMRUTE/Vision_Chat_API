@@ -9,10 +9,38 @@ function getQueryVariable(variable)
        }
        return(false);
 }
+  var app
+  fetch('/getkeys/securely').then((res)=>{
+    res.json().then((data)=>{
+       app =  firebase.initializeApp(data);
+    }) 
+   
+ })
+  
+  var userID =getQueryVariable('userID')
+  var name = getQueryVariable('username')
+  setTimeout(function(){
+    var db = firebase.database(app);
+
+  db.ref('/'+userID+"/").on('value', function(snapshot) {
+    var data = snapshot.val();
+    var st = "<BR>"
+    for(let key in data){
+        
+        st = st+'<BR>'+data[key].username+'<BR>'+data[key].message+'<BR>'
+        
+   }
+    document.getElementById('chat_content').innerHTML = st
+    // console.log(snapshot.val())
+  });
+
+  document.getElementById('submit').addEventListener('click',function(){
+    
+    db.ref('/'+userID+"/"+Date.now()).set({username:name,message:document.getElementById('input').value})
+  })
+  },2000)
+  
+  
+
 
 document.getElementById('headroom').innerHTML = 'Room name '+getQueryVariable('userID')+' : user name '+getQueryVariable('username')
-
-const add = function (){
-    alert('write')
-    
-}

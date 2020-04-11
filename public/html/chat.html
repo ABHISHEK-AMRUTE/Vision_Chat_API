@@ -4,16 +4,19 @@
         <title>{{title}}</title>
         <link rel="stylesheet" type="text/css" href="../css/mystyle.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       
+        <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-database.js"></script>
     </head>
     <body>
         <div id='headroom'>Room name  {{userID}} : user name {{username}}</div>
-        <div id="chatcontent"></div>
+        <!-- <div id="chatcontent"></div> -->
         <div id='bottom'>
-            <div>SEnd messages</div> 
-            <div><button class="button" type="button" style="vertical-align:middle" onclick="add()"><span>Hover </span></button></div>
-        </div>
-            
+            <div><input placeholder="type your message here" id='input'></div> 
+            <div><button id='submit' class="button" type="button" style="vertical-align:middle" ><span>Hover </span></button></div>
+        </div >
+            <p id='chat_content'>
+
+            </p>
         </div>
         <script src="../script/back.js"></script>
     </body>
