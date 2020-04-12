@@ -12,6 +12,7 @@ function getQueryVariable(variable){var query = window.location.search.substring
         
    }
     document.getElementById('chat_content').innerHTML = st
+    window.scrollTo(0,document.body.scrollHeight);
     // console.log(snapshot.val())
   });
 

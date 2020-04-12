@@ -4,7 +4,8 @@
   "description": "one step solution for adding chat functionalities in applications.",
   "main": "index.js",
   "scripts": {
-    "start": "env-cmd ./config/dev.env node index.js"
+    "start": "node index.js",
+    "dev":"env-cmd ./config/dev.env node index.js"
   },
   "keywords": [
     "chat_API",

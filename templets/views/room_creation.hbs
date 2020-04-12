@@ -2,12 +2,63 @@
 <html>
     <head>
         <title>Room creation</title>
-        
+        <link rel="stylesheet" type="text/css" href="./css/room_creation.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script> if (navigator.userAgent.match(/Android/i) 
+            || navigator.userAgent.match(/webOS/i) 
+            || navigator.userAgent.match(/iPhone/i)  
+            || navigator.userAgent.match(/iPad/i)  
+            || navigator.userAgent.match(/iPod/i) 
+            || navigator.userAgent.match(/BlackBerry/i) 
+            || navigator.userAgent.match(/Windows Phone/i))
+            {}
+            </script>
     </head>
     <body>
-        <input id='input' placeholder="enter user name for room">
-        <button type="button" id='submit'>Submit</button>
-        <script src="./script/room_creation.js">Your browser does not supprot JavaScript.Please enable it from setting or contact the developer</script>
-        <p id='message'></p>
+      <div style="text-align: center;">
+        <img src="./img/chat.png" alt="icon">
+      </div>
+        <h1> Vision Chat API</h1>
+        <div class='description'>One step solution to add chat functionalities in your application
+            
+        </div>
+        <div style="text-align: center;"><br>
+            
+            <a href="#step_one"><button class="button button1">Get Started</button></a>
+            <button class="button button1">Features</button>
+            
+        </div>
+        <div id='tagline'>by Abhishek Amrute</div>
+
+
+
+        <div class='getstarted' id='step_one'>
+            <div id='step_count'>Step One:</div>
+            <div  class='description'>Enter the user name to create your chat room. To make that unique you can add your app name along with timestamp.
+                <br>Then click the button to generate user link.
+            </div>
+        <input id='input' placeholder="enter user name for room"><br>
+        <a href="#step_two"><button type="button" id='submit' class='button1'>Generate Link</button></a>
+       
+        </div>
+     <div class="getstarted" id="step_two">
+        <div id='step_count'>Step Two:</div>
+        <div  class='description'>Copy the link generated below, and use it in your application.<br>
+            <p id='message' ></p>
+            <br>That's it.<br>
+             You are done! See how simple was that
+        </div>
+       
+
+    </div>
+
+
+
+
+
+         <script src="./script/room_creation.js">Your browser does not supprot JavaScript.Please enable it from setting or contact the developer</script>
+          
+
+
     </body>
 </html>

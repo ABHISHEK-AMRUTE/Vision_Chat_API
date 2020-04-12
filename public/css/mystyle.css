@@ -1,55 +1,49 @@
+body{
+  margin: 0px;
+}
 #headroom{
-    font-size: 40px;
+    font-size: 2vw;
     text-align: center;
     background-color: #121212;
     color: white;
     
 }
-
+html {
+  scroll-behavior: smooth;
+}
 #bottom {
     position: fixed;
     bottom : 0;
     display: grid;
     width: 100%;
     text-align: center;
-    grid-template-columns: 60% 10%;
+    grid-template-columns:85% 15%;
 }
-.button {
-    display: inline-block;
-    border-radius: 4px;
-    background-color: #f4511e;
+input{
+  width: 95%;
+  border-radius: 5px;
+  height: 2vw;
+  display: inline-block;
+  border: 2px solid #4CAF50;
+  font-size: 1vw;
+  margin: 1vw;
+}
+button{
+  
+ 
+  
+  background-color: #4CAF50; /* Green */
     border: none;
-    color: #FFFFFF;
+    color: white;
+    padding: 1vw 2vw;
     text-align: center;
-    font-size: 28px;
-    padding: 20px;
-    width: 200px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;
-  }
-  
-  .button span {
-    cursor: pointer;
+    text-decoration: none;
     display: inline-block;
-    position: relative;
-    transition: 0.5s;
-  }
-  
-  .button span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-  }
-  
-  .button:hover span {
-    padding-right: 25px;
-  }
-  
-  .button:hover span:after {
-    opacity: 1;
-    right: 0;
-  }
+    font-size: 1vw;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 2vw;
+
+}

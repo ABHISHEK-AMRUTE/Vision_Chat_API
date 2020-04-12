@@ -1,0 +1,97 @@
+html{
+    scroll-behavior: smooth;
+}
+ 
+body{
+    background: #141E30;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+h1{ font-style: italic;
+    color: white;
+    text-align: center;
+    font-size: 3vw;
+}
+img{margin-top:20vh;
+    align-items: center;
+    width: 10vw;
+    height: auto;
+}
+#tagline{
+    color: white;
+    position: fixed;
+    bottom: 0;
+    font-size: 1.5vw;
+    width: 95%;
+    text-align: right;
+}
+.description{
+    color: white;
+    text-align: center;
+    font-size: 1.5vw;
+    font-style: italic;
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 1vw 2vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1vw;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 2vw;
+  }
+  
+  .button1 {
+    background-color:  #4CAF50;
+    color: white; 
+    border: 2px solid #4CAF50;
+  }
+  
+  .button1:hover {
+    background-color:white; 
+    color:black;
+  }
+  .getstarted{
+      margin-top: 20vw;
+      text-align: center;
+  }
+  #input{
+      width: 30%;
+      border-radius: 5px;
+      height: 2vw;
+      display: inline-block;
+      border: 2px solid #4CAF50;
+      font-size: 1vw;
+      margin: 1vw;
+
+  }
+
+  #submit{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 1vw 2vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1vw;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 2vw;
+
+}
+#step_count{
+    color: white;
+    font-style: italic;
+    font-size: 2vw;
+    margin: 1vw;
+}
