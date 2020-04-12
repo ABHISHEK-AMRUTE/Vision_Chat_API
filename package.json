@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev":"env-cmd ./config/dev.env node index.js"
+    "dev": "env-cmd ./config/dev.env node index.js"
   },
   "keywords": [
     "chat_API",
@@ -20,7 +20,7 @@
   "dependencies": {
     "env-cmd": "^8.0.2",
     "express": "^4.17.1",
-    "firebase": "^7.13.2",
+    "firebase": "^7.14.0",
     "hbs": "^4.1.1"
   }
 }
