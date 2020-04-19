@@ -34,6 +34,13 @@ app.get('/user_reg',(req,res)=>{
 })
 
 
+app.get('/add_user/to_list',(req,res)=>{
+  
+    database.ref('/'+req.query.roomID+"_info/"+req.query.user_name).set({joinedat:Date.now()})
+    console.log('user_added_to_list')
+    res.send();
+})
+
 
 app.get('/chat.hbs',(req,res)=>{
     
