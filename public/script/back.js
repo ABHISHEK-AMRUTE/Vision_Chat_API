@@ -2,8 +2,28 @@
 function getQueryVariable(variable){var query = window.location.search.substring(1);var vars = query.split("&");for (var i=0;i<vars.length;i++){var pair = vars[i].split("=");if(pair[0] == variable){return pair[1];}}return(false);}const stri='/'+'g'+'et'+'ke'+'ys'+'/'+'secu'+'r'+'e'+'l'+'y';var app;fetch(stri).then((res)=>{res.json().then((data)=>{app=firebase.initializeApp(data);})});var userID=getQueryVariable('userID');var name = getQueryVariable('username')
   setTimeout(function(){
    var db = firebase.database(app);
+    
+    db.ref('/'+userID+"_info/").on('value', function(snapshot) {
+      var data = snapshot.val();
+      
+      document.getElementById('add_members').innerHTML =""
+      var count = 0
+      for(let key in data){
+     
+       const span = document.createElement('span')
+       span.innerHTML=key
+       span.setAttribute('class','w3-bar-item w3-button w3-large')
+       document.getElementById('add_members').append(span)
+       count++;
+      
+       
 
-  db.ref('/'+userID+"/").on('value', function(snapshot) {
+     }
+     document.getElementById('count').innerHTML=count
+     
+    });
+     
+    db.ref('/'+userID+"/").on('value', function(snapshot) {
     var data = snapshot.val();
     
     document.getElementById('chat_content').innerHTML =""
@@ -50,6 +70,14 @@ function getQueryVariable(variable){var query = window.location.search.substring
   },2000)
   
   
-
+  function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+  
+  }
+  
+  function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+  
+  }
 
 document.getElementById('headroom').innerHTML = ''+getQueryVariable('userID')+' : '+getQueryVariable('username') + ''

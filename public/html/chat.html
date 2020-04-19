@@ -8,30 +8,67 @@
         <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-database.js"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
         <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
        
     </head>
     <body class="w3-theme-l4">
-        <div id='headroom' class="w3-container w3-center w3-xlarge w3-theme" style="padding-top: 8px; padding-bottom: 8px; font-family: 'Allerta Stencil', Sans-serif;">
+             <!-- Side Bar -->
+
+
+             <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:300px;background: #141E30;  /* fallback for old browsers */
+             background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+             background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */" id="mySidebar">
+                <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+                <h2 style="color: white;text-align: center;margin-top: 8px;"><b>Room Members</b></h2>
+                <div style="text-align: center;">
+                  <span id='count' style="color: white;font-size: xx-large;">0</span>
+                  <span style="color: white;font-size: large;">Members</span>
+                </div>
+                <div id="add_members" style='color: whitesmoke;'>
+                
+                </div>
+              </div>
+
+
+
+
+
+
+        <div class="w3-main" style="margin-left:300px">
+        <div class="w3-container w3-center " style="background-color: rgba(20, 30, 48, 0.911);color:white;padding-top: 8px; padding-bottom: 8px; font-family: 'Allerta Stencil', Sans-serif;">
+            <button class="w3-button w3-hide-large" style="background-color: rgba(20, 30, 48, 0.911);" onclick="w3_open()">&#9776;</button>
+            <span  id='headroom'class='w3-xlarge' ></span>
         </div>
 
 
-       
+        <!-- margin-left: 300px;padding: 5px; position: fixed; bottom: 0; right: 0; left: 0; -->
         
-        <div class="w3-row w3-indigo" style="padding: 5px; position: fixed; bottom: 0; right: 0; left: 0;">
+        <!-- <div class="w3-row w3-bottom " style="background-color: #243B55;padding: 5px;width: 84%;">
             <div class="w3-col s10 m10 l11">
-                <input class="w3-input w3-border w3-round-large w3-hover-white w3-indigo" style="width:100%;" placeholder="Type your message here" id='input'>
+                <input class="w3-input w3-border w3-round-large w3-hover-white " style="background-color: #243B55;width:100%;" placeholder="Type your message here" id='input'>
             </div>
             <div class="w3-col s2 m2 l1 " >
-                <button id='submit' style="width:100%;" class="w3-button w3-indigo w3-border w3-hover-white ">Send</button>
+                <button id='submit' style="background-color: #243B55;width:100%;" class="w3-button  w3-round w3-border w3-hover-white ">Send</button>
             </div>
-          </div>
-
-          
+          </div> -->
+         
         
             <p id='chat_content' style="margin-bottom: 50px;">
                    Loading...
             </p>
         </div>
+        </div>
+        <div id='chat_bar' style="background-color: white;position: fixed;bottom: 0;right: 0; left: 0;z-index: 1;padding: 5px;">
+            <div class="input-group" >
+              <input id='input' type="text" class="form-control" placeholder="Search">
+              <div class="input-group-append">
+                <button id='submit' class="btn btn-success" type="submit">Send</button>  
+               </div>
+            </div>
+          </div>
         <script src="../script/back.js"></script>
     </body>
 </html>
