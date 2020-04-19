@@ -2,22 +2,34 @@
 <html>
     <head>
         <title>{{title}}</title>
-        <link rel="stylesheet" type="text/css" href="../css/mystyle.css">
-        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-database.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+        <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css">
+       
     </head>
-    <body>
-        <div id='headroom'>Room name  {{userID}} : user name {{username}}</div>
-        <!-- <div id="chatcontent"></div> -->
-        <div id='bottom'>
-            <div><input placeholder="type your message here" id='input'></div> 
-            <div><button id='submit' class="button" type="button" style="vertical-align:middle" ><span>Send </span></button></div>
-        </div >
-            <p id='chat_content'>
+    <body class="w3-theme-l4">
+        <div id='headroom' class="w3-container w3-center w3-xlarge w3-theme" style="padding-top: 8px; padding-bottom: 8px; font-family: 'Allerta Stencil', Sans-serif;">
+        </div>
 
+
+       
+        
+        <div class="w3-row w3-indigo" style="padding: 5px; position: fixed; bottom: 0; right: 0; left: 0;">
+            <div class="w3-col s10 m10 l11">
+                <input class="w3-input w3-border w3-round-large w3-hover-white w3-indigo" style="width:100%;" placeholder="Type your message here" id='input'>
+            </div>
+            <div class="w3-col s2 m2 l1 " >
+                <button id='submit' style="width:100%;" class="w3-button w3-indigo w3-border w3-hover-white ">Send</button>
+            </div>
+          </div>
+
+          
+        
+            <p id='chat_content' style="margin-bottom: 50px;">
+                   Loading...
             </p>
         </div>
         <script src="../script/back.js"></script>
