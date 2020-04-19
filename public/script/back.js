@@ -12,11 +12,11 @@ function getQueryVariable(variable){var query = window.location.search.substring
       
         const div_out = document.createElement('div')
         const header = document.createElement('header')
-        const p_header = document.createElement('p')
+        const p_header = document.createElement('div')
         const div_in = document.createElement('div')
        
-        const p_in = document.createElement('p')   
-        p_header.innerHTML = data[key].username
+        const p_in = document.createElement('div')   
+        p_header.innerHTML = '<b>'+data[key].username+'</b>'
         p_in.innerHTML = data[key].message
 
         div_in.append(p_in)
@@ -28,6 +28,8 @@ function getQueryVariable(variable){var query = window.location.search.substring
         div_out.setAttribute('class','w3-card-2 w3-theme-l5')
         div_in.setAttribute('class','w3-container')
         header.setAttribute('class','w3-container  w3-large')
+        p_header.setAttribute('style','margin-top:12px;margin-bottom:4px;color:blue;')
+        p_in.setAttribute('style','margin-bottom:4px;overflow-x: scroll;')
         div_out.setAttribute('style','margin-left: 4px;margin-right: 4px;margin-top:8px;margin-bottom:2px')
         document.getElementById('chat_content').append(div_out)
        // st = st+'<BR>'+data[key].username+'<BR>'+data[key].message+'<BR>'
@@ -41,8 +43,9 @@ function getQueryVariable(variable){var query = window.location.search.substring
   });
 
   document.getElementById('submit').addEventListener('click',function(){
-    
+    if(document.getElementById('input').value!=""){
     db.ref('/'+userID+"/"+Date.now()).set({username:name,message:document.getElementById('input').value})
+    document.getElementById('input').value ="";}
   })
   },2000)
   
