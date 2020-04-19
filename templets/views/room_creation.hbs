@@ -1,64 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html style="scroll-behavior: smooth;">
     <head>
         <title>Room creation</title>
-        <link rel="stylesheet" type="text/css" href="./css/room_creation.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script> if (navigator.userAgent.match(/Android/i) 
-            || navigator.userAgent.match(/webOS/i) 
-            || navigator.userAgent.match(/iPhone/i)  
-            || navigator.userAgent.match(/iPad/i)  
-            || navigator.userAgent.match(/iPod/i) 
-            || navigator.userAgent.match(/BlackBerry/i) 
-            || navigator.userAgent.match(/Windows Phone/i))
-            {}
-            </script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-database.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+         <link rel="stylesheet" href="./css/room_creation.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     </head>
     <body>
-      <div style="text-align: center;">
-        <img src="./img/chat.png" alt="icon">
-      </div>
-        <h1> Vision Chat API</h1>
-        <div class='description'>One step solution to add chat functionalities in your application
-            
-        </div>
-        <div style="text-align: center;"><br>
-            
-            <a href="#step_one"><button class="button button1">Get Started</button></a>
-            <button class="button button1">Features</button>
-            
-        </div>
-        <div id='tagline'>by Abhishek Amrute</div>
-
-
-
-        <div class='getstarted' id='step_one'>
-            <div id='step_count'>Step One:</div>
-            <div  class='description'>Enter the user name to create your chat room. To make that unique you can add your app name along with timestamp.
-                <br>Then click the button to generate user link.
-            </div>
-        <input id='input' placeholder="enter user name for room"><br>
-        <a href="#step_two"><button type="button" id='submit' class='button1'>Generate Link</button></a>
        
-        </div>
-     <div class="getstarted" id="step_two">
-        <div id='step_count'>Step Two:</div>
-        <div  class='description'>Copy the link generated below, and use it in your application.<br>
-            <p id='message' ></p>
-            <br>That's it.<br>
-             You are done! See how simple was that
-        </div>
-       
-
-    </div>
-
-
-
-
-
-         <script src="./script/room_creation.js">Your browser does not supprot JavaScript.Please enable it from setting or contact the developer</script>
+        <div class='w3-container w3-center' style="box-shadow: 2px 3px 3px grey;color: white;background: #141E30;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">
           
+          <div class="w3-bar w3-large" >
+            <a href="#" class="w3-bar-item w3-button w3-mobile">About</a>
+            <a href="#" class="w3-bar-item w3-button w3-mobile">Links</a>
+            <a href="#" class="w3-bar-item w3-button w3-mobile">Dev</a>
+            <div style="margin-top:100px;"></div>
+          </div><br>
+          <img src="./img/chat.png" width="200px" height="200px" class='w3-img'>
+          <h1 class='w3-xxlarge'style="margin-top:10px; font-family: 'Times New Roman', Times, serif;">
+            <i><b>Vision Chat API</b></i>
+          </h1>
+        <div class='w3-large' style="margin-top:10px;margin-bottom: 20px;font-family: 'Times New Roman', Times, serif;">
+          <i>One step solution to add chat functionalities in your application</i>
+        </div>
+        <a href="#getstarted"><button id='submit'  style="margin-bottom: 20px;" class="w3-button w3-round w3-white w3-border w3-hover-blue ">Get Started</button></a>
+        </div>
 
 
+
+         <!-- Get Started -->
+         
+
+<div id="getstarted"style="margin-top: 50px;" class="w3-container w3-large">
+  <div class='w3-row'> 
+      <div class='w3-col l6' style="padding: 5px;">
+  <div class="w3-card-2 w3-round" style="padding: 15px;">
+   <h3><b>Step one</b></h3>
+   <p>
+     Enter the name with which you want to create chat room. Try to be unique(like add some numbers,symboles)
+   </p>
+    <div class="input-group mb-3">
+     <input id='input' type="text" class="form-control" placeholder="Enter the name here">
+      <div class="input-group-append">
+        
+        <button class="btn btn-primary" type="submit"  onclick="callme()">Generate link</button>  
+       </div>
+    </div>
+  </div>
+  </div>
+
+<div class='w3-col l6' style="padding: 5px;">
+  <div class="w3-card-2 w3-round" style="padding: 15px;">
+    <h3><b>Step two</b></h3>
+    <p>
+      Here is your public link of the chat room, copy it and use across various applications.
+    </p>
+     <div class="input-group mb-3">
+       <input id='message' type="text" class="form-control w3-yellow" style="overflow-y: scroll;">
+       <div class="input-group-append">
+         
+         <button class="btn btn-primary" type="submit" onclick="myFunction()">Copy to clipboard</button>  
+        </div>
+     </div>
+   </div>
+</div>
+
+  </div>
+
+
+  </div>
+<div id="snackbar">Text copied to clipboard</div>
+        <script src="./script/room_creation.js"></script>
     </body>
 </html>
