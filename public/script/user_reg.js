@@ -12,6 +12,15 @@ function getQueryVariable(variable)
 const userID= getQueryVariable('roomID')
 console.log('user room name '+userID)
 document.getElementById('submit').addEventListener('click',function(){
+
+    
+    fetch('/add_user/to_list?roomID='+userID+'&user_name='+document.getElementById('input').value).then((res)=>{
+        res.json().then((data)=>{
+             
+        }) 
+       
+     })
+
     window.location.replace('../html/chat.html?userID='+ userID
     +'&username='+document.getElementById('input').value);
     
