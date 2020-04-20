@@ -17,11 +17,11 @@ app.get('',(req,res)=>{
 app.get('/chat/:usrname/:message',(req,res)=>{database.ref('/user/'+Date.now()).set({"namam":"hi there"});res.send("form app congrats!")});app.get('/getkeys/securely',(req,res)=>{res.send(keys)})
 
 ///creating room 
-app.get('/createRoom/:userId',(req,res)=>{
-    const userId  = req.params.userId;
+app.get('/createRoom',(req,res)=>{
+    const userId  =req.query.userId;
     console.log(userId)
     database.ref('/'+userId+"/"+Date.now()).set({username:"admin",message:"room created"})
-    const url = process.env.URL + '/user_reg?roomID='+userId
+    const url = process.env.URL + '/user_reg?roomID='+req.query.userId
     console.log(url)
     res.send({url})
 })
