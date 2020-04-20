@@ -1,8 +1,8 @@
 
-function getQueryVariable(variable){var query = window.location.search.substring(1);var vars = query.split("&");for (var i=0;i<vars.length;i++){var pair = vars[i].split("=");if(pair[0] == variable){return pair[1];}}return(false);}const stri='/'+'g'+'et'+'ke'+'ys'+'/'+'secu'+'r'+'e'+'l'+'y';var app;fetch(stri).then((res)=>{res.json().then((data)=>{app=firebase.initializeApp(data);})});var userID=getQueryVariable('userID');var name = getQueryVariable('username')
+function getQueryVariable(variable){var query = window.location.search.substring(1);var vars = query.split("&");for (var i=0;i<vars.length;i++){var pair = vars[i].split("=");if(pair[0] == variable){return pair[1];}}return(false);}const stri='/'+'g'+'et'+'ke'+'ys'+'/'+'secu'+'r'+'e'+'l'+'y';var app;fetch(stri).then((res)=>{res.json().then((data)=>{app=firebase.initializeApp(data);})});var userID=decodeURIComponent(getQueryVariable('userID'));var name = decodeURIComponent(getQueryVariable('username'))
   setTimeout(function(){
    var db = firebase.database(app);
-   const username = getQueryVariable('username');
+   const username = decodeURIComponent(getQueryVariable('username'));
     db.ref('/'+userID+"_info/").on('value', function(snapshot) {
       var data = snapshot.val();
       
@@ -16,7 +16,7 @@ function getQueryVariable(variable){var query = window.location.search.substring
        span.setAttribute('class','w3-bar-item w3-button w3-large')
        document.getElementById('add_members').append(span)
        count++;
-       if(key==username)
+       if(key==name)
        {
          flag=1
        }
@@ -38,7 +38,7 @@ function getQueryVariable(variable){var query = window.location.search.substring
     document.getElementById('chat_content').innerHTML =""
     for(let key in data){
       
-      if(data[key].username==username)
+      if(data[key].username==name)
         {
         const div_out = document.createElement('div')
         const header = document.createElement('header')
@@ -119,6 +119,13 @@ function getQueryVariable(variable){var query = window.location.search.substring
     db.ref('/'+userID+"/"+Date.now()).set({username:name,message:document.getElementById('input').value})
     document.getElementById('input').value ="";}
   })
+
+  document.getElementById('input').addEventListener('keyup',function(event){
+    if(event.keyCode==13 && document.getElementById('input').value!=""){
+    db.ref('/'+userID+"/"+Date.now()).set({username:name,message:document.getElementById('input').value})
+    document.getElementById('input').value ="";}
+  })
+
   },2000)
   
   
@@ -132,5 +139,5 @@ function getQueryVariable(variable){var query = window.location.search.substring
   
   }
 
-document.getElementById('headroom').innerHTML = ''+getQueryVariable('userID')+' : '+getQueryVariable('username') + ''
-document.getElementById('title').innerHTML=getQueryVariable('userID')
+document.getElementById('headroom').innerHTML = ''+userID+' : '+name + ''
+document.getElementById('title').innerHTML=userID
