@@ -1,85 +1,185 @@
 <!DOCTYPE html>
 <html style="scroll-behavior: smooth;">
-    <head>
-        <title>Room creation</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-database.js"></script>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
-         <link rel="stylesheet" href="./css/room_creation.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    </head>
-    <body>
-       
-        <div class='w3-container w3-center' style="box-shadow: 2px 3px 3px grey;color: white;background: #141E30;  /* fallback for old browsers */
+
+<head>
+  <title>Room creation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-database.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+  <link rel="stylesheet" href="./css/room_creation.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+</head>
+
+<body>
+
+  <div class='w3-container w3-center'
+    style="box-shadow: 2px 3px 3px grey;color: white;background: #141E30;  /* fallback for old browsers */
         background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
         background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">
-          
-          <div class="w3-bar w3-large" >
-            <a href="#" class="w3-bar-item w3-button w3-mobile">About</a>
-            <a href="#" class="w3-bar-item w3-button w3-mobile">Links</a>
-            <a href="#" class="w3-bar-item w3-button w3-mobile">Dev</a>
-            <div style="margin-top:100px;"></div>
-          </div><br>
-          <img src="./img/chat.png" width="200px" height="200px" class='w3-img'>
-          <h1 class='w3-xxlarge'style="margin-top:10px; font-family: 'Times New Roman', Times, serif;">
-            <i><b>Vision Chat API</b></i>
-          </h1>
-        <div class='w3-large' style="margin-top:10px;margin-bottom: 20px;font-family: 'Times New Roman', Times, serif;">
-          <i>One step solution to add chat functionalities in your application</i>
+
+    <div class="w3-bar w3-large">
+      <a href="#about" class="w3-bar-item w3-button w3-mobile">About</a>
+      <a href="#dev" class="w3-bar-item w3-button w3-mobile">Dev</a>
+      <div style="margin-top:100px;"></div>
+    </div><br>
+    <img src="./img/chat.png" width="200px" height="200px" class='w3-img'>
+    <h1 class='w3-xxlarge' style="margin-top:10px; font-family: 'Times New Roman', Times, serif;">
+      <i><b>Vision Chat API</b></i>
+    </h1>
+    <div class='w3-large' style="margin-top:10px;margin-bottom: 20px;font-family: 'Times New Roman', Times, serif;">
+      <i>One step solution to add chat functionalities in your application</i>
+    </div>
+    <a href="#getstarted"><button id='submit' style="margin-bottom: 40px;"
+        class="w3-button w3-round w3-white w3-border w3-hover-blue ">Get Started</button></a>
+  </div>
+
+
+
+  <div id='about'>
+
+    <div class="w3-container" style="margin-top: 50px;">
+      <div class='w3-row w3-border'>
+        <div class="w3-col l5 m5">
+          <div class='w3-card w3-border' style="float:right">
+            <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_wQgec5.json" background="#FFFFFF"
+              speed="2" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+          </div>
         </div>
-        <a href="#getstarted"><button id='submit'  style="margin-bottom: 20px;" class="w3-button w3-round w3-white w3-border w3-hover-blue ">Get Started</button></a>
+        <div class="w3-col l7 m7">
+          <div class='' style="float:left;padding:50px;">
+            <h1 class='w3-xxlarge'
+              style="text-align:center;margin-top:10px; font-family: 'Times New Roman', Times, serif;"><b><i>Easy
+                  Integration</i></b></h1>
+            <p class='w3-large' style="font-family: 'Times New Roman', Times, serif;text-align:center">
+              Just Two steps to integrate Vision Chat API in your applications.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="w3-container" style="margin-top: 50px;">
+      <div class='w3-row w3-border'>
+        <div class="w3-col l7 m7">
+          <div class='' style="float:right;padding:50px;">
+            <h1 class='w3-xxlarge'
+              style="text-align:center;margin-top:10px; font-family: 'Times New Roman', Times, serif;"><b><i>Build for
+                  Every UI</i></b></h1>
+            <p class='w3-large' style="font-family: 'Times New Roman', Times, serif;text-align:center">
+              The predefined UI can be used across any plateform.
+            </p>
+          </div>
+        </div>
+        <div class="w3-col l5 m5 ">
+          <div class='w3-card w3-border' style="float:left">
+            <lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_2u9Zt5.json" background="#FFFFFF"
+              speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+          </div>
         </div>
 
+      </div>
+
+    </div>
+
+    <div class="w3-container" style="margin-top: 50px;">
+      <div class='w3-row w3-border'>
+        <div class="w3-col l5 m5">
+          <div class='w3-card w3-border' style="float:right">
+            <img src="./img/mob_chat.jpeg" style="width: 300px; height: 300px;" loop autoplay>
+          </div>
+        </div>
+        <div class="w3-col l7 m7">
+          <div class='' style="float:left;padding:50px;">
+            <h1 class='w3-xxlarge'
+              style="text-align:center;margin-top:10px; font-family: 'Times New Roman', Times, serif;"><b><i>Default
+                  UI</i></b></h1>
+            <p class='w3-large' style="font-family: 'Times New Roman', Times, serif;text-align:center">
+              The default user interface eliminates the extra pain. <br>It can be used across any plateform,<br>from
+              Android's web view to your favorite web browsers
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
 
 
-         <!-- Get Started -->
-         
 
-<div id="getstarted"style="margin-top: 50px;" class="w3-container w3-large">
-  <div class='w3-row'> 
+  </div>
+
+
+
+
+
+  <!-- Get Started -->
+
+
+  <div id="getstarted" style="margin-top: 50px;" class=" w3-border w3-container w3-large">
+    <h1 class='w3-xxlarge' style="text-align:center;margin-top:10px; font-family: 'Times New Roman', Times, serif;">
+      <b><i>Get Started</i></b></h1>
+    <div class='w3-row'>
       <div class='w3-col  l6' style="padding: 5px;">
-  <div class="w3-card-2 w3-round" style="padding: 15px;">
-   <h3><b>Step one</b></h3>
-   <p>
-     Enter the name with which you want to create chat room. Try to be unique(like add some numbers,symboles)
-   </p>
-    <div class="input-group mb-3">
-     <input id='input' type="text" class="form-control" placeholder="Enter the name here">
-      <div class="input-group-append">
-        
-        <button class="btn btn-primary" type="submit"  onclick="callme()">Generate link</button>  
-       </div>
+        <div class="w3-card-2 w3-round" style="padding: 15px;">
+          <h3><b>Step one</b></h3>
+          <p>
+            Enter the name with which you want to create chat room. Try to be unique(like add some numbers,symboles)
+          </p>
+          <div class="input-group mb-3">
+            <input id='input' type="text" class="form-control" placeholder="Enter the name here">
+            <div class="input-group-append">
+
+              <button class="btn btn-primary" type="submit" onclick="callme()">Generate link</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class='w3-col l6' style="padding: 5px;">
+        <div class="w3-card-2 w3-round" style="padding: 15px;">
+          <h3><b>Step two</b></h3>
+          <p>
+            Here is your public link of the chat room, copy it and use across various applications.Test it now by
+            pasting the link in browser.
+          </p>
+          <div class="input-group mb-3">
+            <input id='message' type="text" class="form-control w3-yellow" style="overflow-y: scroll;">
+            <div class="input-group-append">
+
+              <button class="btn btn-primary" type="submit" onclick="myFunction()">Copy to clipboard</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+  <div class="w3-card-2" id="dev" style="margin-top: 100px;">
+    <h1 style="margin-left: 20px;">About Developer</h1>
+    <div >
+      <div class="list-group">
+        <div class="list-group-item list-group-item-action-grey"><b>Abhishek Amrute</b>, 2nd year, IIIT kalyani, W.B.
+        </div>
+        <a target="_blank" href="https://github.com/ABHISHEK-AMRUTE" class="list-group-item list-group-item-action-grey">Visit my GitHub
+          page</a>
+        <a target="_blank" href="https://www.linkedin.com/in/abhishek-amrute-33808a172/?msgConversationId=6629918669122179072&msgOverlay=true"
+          class="list-group-item list-group-item-action-grey">LinkedIn Profile</a>
+      </div>
     </div>
   </div>
-  </div>
+  <div id="snackbar">Text copied to clipboard</div>
+  <script src="./script/room_creation.js"></script>
+</body>
 
-<div class='w3-col l6' style="padding: 5px;">
-  <div class="w3-card-2 w3-round" style="padding: 15px;">
-    <h3><b>Step two</b></h3>
-    <p>
-      Here is your public link of the chat room, copy it and use across various applications.
-    </p>
-     <div class="input-group mb-3">
-       <input id='message' type="text" class="form-control w3-yellow" style="overflow-y: scroll;">
-       <div class="input-group-append">
-         
-         <button class="btn btn-primary" type="submit" onclick="myFunction()">Copy to clipboard</button>  
-        </div>
-     </div>
-   </div>
-</div>
-
-  </div>
-
-
-  </div>
-<div id="snackbar">Text copied to clipboard</div>
-        <script src="./script/room_creation.js"></script>
-    </body>
 </html>
