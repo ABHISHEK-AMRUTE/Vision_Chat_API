@@ -5,6 +5,8 @@ const path = require('path')
 const keys = require('../../keys')
 //////////landing page of the chat interface/////
 app.get('',(req,res)=>{
+//////temp
+    database.ref('/user_count_onvisit_landing_page/'+Date.now()+'/').set({date:Date.now()})
     res.render('room_creation',{
         tit : {
             name : "title of the page",
@@ -21,6 +23,8 @@ app.get('/createRoom',(req,res)=>{
     const userId  =req.query.userId;
     console.log(userId)
     database.ref('/'+userId+"/"+Date.now()).set({username:"admin",message:"room created"})
+    //////temp
+    database.ref('/user_count_on_create_room/'+Date.now()+'/').set({date:Date.now()})
     const url = process.env.URL + '/user_reg?roomID='+req.query.userId
     console.log(url)
     res.send({url})
@@ -30,12 +34,14 @@ app.get('/createRoom',(req,res)=>{
 //// loading 
 app.get('/user_reg',(req,res)=>{
     console.log(req.query.roomID)
+     
     res.render('user_reg',{userID:req.query.roomID})
 })
 
 
 app.get('/add_user/to_list',(req,res)=>{
-  
+    //////temp
+    database.ref('/user_count_on_reg_users/'+Date.now()+'/').set({date:Date.now()})
     database.ref('/'+req.query.roomID+"_info/"+req.query.user_name).set({joinedat:Date.now()})
     console.log('user_added_to_list')
     res.send();
