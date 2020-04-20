@@ -3,8 +3,10 @@
    
 // })
 function callme(){
-    console.log('adasdsadasdasdasd')
-    fetch('/createRoom/'+document.getElementById('input').value).then((res)=>{
+    
+    var str =  encodeURIComponent(document.getElementById('input').value)
+    
+    fetch('/createRoom?userId='+str).then((res)=>{
        res.json().then((data)=>{
            document.getElementById('message').value = data.url 
            
