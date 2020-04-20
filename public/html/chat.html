@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html style="scroll-behavior: smooth;">
     <head>
-        <title>{{title}}</title>
+        <title id='title'>{{title}}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
@@ -18,11 +18,9 @@
              <!-- Side Bar -->
 
 
-             <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:300px;background: #141E30;  /* fallback for old browsers */
-             background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
-             background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */" id="mySidebar">
-                <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
-                <h2 style="color: white;text-align: center;margin-top: 8px;"><b>Room Members</b></h2>
+             <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:300px;background-color: rgba(20, 30, 48, 0.979);" id="mySidebar">
+                <button class="w3-bar-item w3-button w3-xlarge w3-hide-large" onclick="w3_close()" style="color: white;"> &times;</button>
+                <h2  style="color: white;text-align: center;margin-top: 8px;"><b id='headroom'></b><hr class="w3-large"></h2>
                 <div style="text-align: center;">
                   <span id='count' style="color: white;font-size: xx-large;">0</span>
                   <span style="color: white;font-size: large;">Members</span>
@@ -38,27 +36,22 @@
 
 
         <div class="w3-main" style="margin-left:300px">
-        <div class="w3-container w3-center " style="background-color: rgba(20, 30, 48, 0.911);color:white;padding-top: 8px; padding-bottom: 8px; font-family: 'Allerta Stencil', Sans-serif;">
+        <div class="w3-container" style="background-color: rgba(20, 30, 48, 0.911);color:white;position: -webkit-sticky; /* Safari */
+        position: sticky;
+        top: 0;">
             <button class="w3-button w3-hide-large" style="background-color: rgba(20, 30, 48, 0.911);" onclick="w3_open()">&#9776;</button>
-            <span  id='headroom'class='w3-xlarge' ></span>
+            <span id='spinner' class="spinner-border text-info" style="vertical-align: middle;float: right;margin: 4px;" ></span>
         </div>
 
 
-        <!-- margin-left: 300px;padding: 5px; position: fixed; bottom: 0; right: 0; left: 0; -->
-        
-        <!-- <div class="w3-row w3-bottom " style="background-color: #243B55;padding: 5px;width: 84%;">
-            <div class="w3-col s10 m10 l11">
-                <input class="w3-input w3-border w3-round-large w3-hover-white " style="background-color: #243B55;width:100%;" placeholder="Type your message here" id='input'>
-            </div>
-            <div class="w3-col s2 m2 l1 " >
-                <button id='submit' style="background-color: #243B55;width:100%;" class="w3-button  w3-round w3-border w3-hover-white ">Send</button>
-            </div>
-          </div> -->
+       
          
         
             <p id='chat_content' style="margin-bottom: 50px;">
-                   Loading...
+             
             </p>
+            
+           
         </div>
         </div>
         <div id='chat_bar' style="background-color: white;position: fixed;bottom: 0;right: 0; left: 0;z-index: 1;padding: 5px;">
