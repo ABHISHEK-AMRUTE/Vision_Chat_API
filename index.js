@@ -15,7 +15,7 @@ var  viewpath =path.join(__dirname,'./templets/views')
 app.set('views',viewpath)
 
 
-console.log(encodeURIComponent('abhishke amrute'))
+
 app.listen(port,()=>{
     console.log('Server is up on port: '+port)
 })
