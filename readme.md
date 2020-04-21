@@ -7,7 +7,7 @@ Hi there! Vision chat API is created with an aim to let the developers integrate
 
  1. Very easy to integrate.
  2. Data privacy and Automatic deletion : In order to maintain privacy, we promot functions to delete chat records after 24 hours(can be manipulated) of chat room creation.
- 3. Default User interface eliminates pain. Use it across any plateform. 
+ 3. Default User interface eliminates pain. Use it across any platform. 
  
  
 
@@ -21,7 +21,7 @@ Hi there! Vision chat API is created with an aim to let the developers integrate
 <br>
 ## How to use generated link
 
-|  Plateform|where to use  |
+|  Platform|where to use  |
 |--|--|
 | Android or IOS |In Web View with JavaScript enabled  |
 |||
