@@ -39,7 +39,7 @@ Hi there! Vision chat API is created with an aim to let the developers integrate
 ## Want to contribute
 
  1. Clone or download the repo.
- 2. `npm init`
+ 2. `npm install`
  3. [Link server](https://firebase.google.com/docs/database/web/start) and add configrations in Keys.js
  4. To run code  execute `npm run dev`
 
