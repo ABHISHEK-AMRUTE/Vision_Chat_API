@@ -3,6 +3,9 @@ const app = new express.Router()
 const database = require('../firebase/firebase')
 const path = require('path')
 const keys = require('../../keys')
+
+
+
 //////////landing page of the chat interface/////
 app.get('',(req,res)=>{
 //////temp
@@ -36,7 +39,7 @@ app.get('/createRoom',(req,res)=>{
             database.ref('/'+userId+"/"+Date.now()).set({username:"admin",message:"room created"})
             //////temp
             database.ref('/user_count_on_create_room/'+Date.now()+'/').set({date:Date.now()})
-            const url = process.env.URL + '/user_reg?roomID='+req.query.userId
+            const url = process.env.URL + '/user_reg?roomID='+ req.query.userId
             console.log(url)
             res.send({url})
         }else{
