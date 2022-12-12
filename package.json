@@ -19,7 +19,7 @@
   "license": "ISC",
   "dependencies": {
     "env-cmd": "^8.0.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "firebase": "^7.14.0",
     "hbs": "^4.1.1"
   }
